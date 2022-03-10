@@ -75,6 +75,9 @@ const App = () => {
       {
         Header: 'Sport',
         accessor: 'sport',
+        disableSortBy: true,
+        Filter: SelectColumnFilter,
+        filter: 'equals',
       },
       {
         Header: 'League',

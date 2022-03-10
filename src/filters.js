@@ -22,7 +22,7 @@ export const DefaultColumnFilter = ({
       onChange={(e) => {
         setFilter(e.target.value || undefined);
       }}
-      placeholder={`search (${length}) ...`}
+      // placeholder={`search (${length}) ...`}
     />
   );
 };

@@ -31,7 +31,7 @@ const TableContainer = ({ columns, data, renderRowSubComponent }) => {
       columns,
       data,
       defaultColumn: { Filter: DefaultColumnFilter },
-      initialState: { pageIndex: 0, pageSize: 10 },
+      initialState: { pageIndex: 0, pageSize: 25 },
     },
     useFilters,
     useSortBy,
@@ -54,7 +54,7 @@ const TableContainer = ({ columns, data, renderRowSubComponent }) => {
 
   return (
     <Fragment>
-      <Table bordered hover {...getTableProps()}>
+      <Table bordered hover {...getTableProps()} style={{padding: '0.05rem'}}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -76,16 +76,16 @@ const TableContainer = ({ columns, data, renderRowSubComponent }) => {
             prepareRow(row);
             return (
               <Fragment key={row.getRowProps().key}>
-                <tr>
+                <tr >
                   {row.cells.map((cell) => {
                     return (
-                      <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                      <td {...cell.getCellProps()} style={{padding: '0.05rem'}}>{cell.render('Cell')}</td>
                     );
                   })}
                 </tr>
                 {row.isExpanded && (
                   <tr>
-                    <td colSpan={visibleColumns.length}>
+                    <td colSpan={visibleColumns.length} style={{padding: '0.05rem'}}>
                       {renderRowSubComponent(row)}
                     </td>
                   </tr>
@@ -96,7 +96,7 @@ const TableContainer = ({ columns, data, renderRowSubComponent }) => {
         </tbody>
       </Table>
 
-      <Row style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
+      <Row style={{ maxWidth: 'auto', margin: '0 auto', textAlign: 'center' }}>
         <Col md={3}>
           <Button
             color='primary'
@@ -119,7 +119,7 @@ const TableContainer = ({ columns, data, renderRowSubComponent }) => {
             {pageIndex + 1} of {pageOptions.length}
           </strong>
         </Col>
-        <Col md={2}>
+        <Col md={1}>
           <Input
             type='number'
             min={1}
@@ -129,20 +129,20 @@ const TableContainer = ({ columns, data, renderRowSubComponent }) => {
             onChange={onChangeInInput}
           />
         </Col>
-        <Col md={2}>
+        {/* <Col md={1}>
           <CustomInput
             type='select'
             value={pageSize}
             onChange={onChangeInSelect}
           >
             >
-            {[10, 20, 30, 40, 50].map((pageSize) => (
+            {[25, 20, 30, 40, 50].map((pageSize) => (
               <option key={pageSize} value={pageSize}>
                 Show {pageSize}
               </option>
             ))}
           </CustomInput>
-        </Col>
+        </Col> */}
         <Col md={3}>
           <Button color='primary' onClick={nextPage} disabled={!canNextPage}>
             {'>'}

@@ -44,11 +44,6 @@ const App = () => {
           <CardTitle>
             <strong>{`${first} ${last}`} </strong>
           </CardTitle>
-          <CardText>
-            <strong>Phone</strong>: {cell} <br />
-            <strong>Address:</strong>{' '}
-            {`${street.name} ${street.number} - ${postcode} - ${city}`}
-          </CardText>
         </CardBody>
       </Card>
     );
@@ -87,12 +82,22 @@ const App = () => {
         filter: 'equals',
       },
       {
-        Header: 'Game',
-        accessor: 'game',
+        Header: 'Home',
+        accessor: 'homegame',
+      },
+      {
+        Header: 'Away',
+        accessor: 'awaygame',
       },
       {
         Header: 'Start',
         accessor: 'start',
+        disableSortBy: false,
+
+      },
+      {
+        Header: 'Releasetime',
+        accessor: 'releasetime',
         disableSortBy: false,
 
       },

@@ -298,6 +298,8 @@ const Alert = () => {
             {
                 Header: 'Action',
                 accessor: 'id',
+                disableFilters: true,
+                Filter: SelectColumnFilter,
                 Cell: ({ row }) => (
                     <div>
                         <EditDialog row={row}/>

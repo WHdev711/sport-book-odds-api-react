@@ -2,17 +2,15 @@ import React from 'react';
 import './App.css';
 import Navigation from './components/Navbar';
 import Routes from './Routes';
-import Dashboard from './Dashboard';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  return (
-    <div className="App">
-      {/* <Navigation /> */}
-      <Navigation/>
-     <Routes /> 
-      {/* <Dashboard /> */}
-    </div>
-  );
+    return (
+        <div className="App">
+            <Navigation />
+            <Routes />
+        </div>
+    );
 }
 
 export default App;

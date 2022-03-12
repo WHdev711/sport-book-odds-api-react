@@ -8,7 +8,6 @@ import {
   CardTitle,
 } from 'reactstrap';
 import TableContainer from './TableContainer';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { SelectColumnFilter } from './filters';
 
 const Dashboard = () => {
